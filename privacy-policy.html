@@ -69,7 +69,7 @@
 
     <main class="policy-content">
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last Updated: May 3, 2026</p>
+        <p class="last-updated">Last Updated: May 7, 2026</p>
 
         <h2>1. Who We Are</h2>
         <p>Sprout is provided by <strong>Pablo Galve</strong>, an individual developer. References to "I", "me", or "the provider" in this policy mean Pablo Galve.</p>
@@ -77,6 +77,7 @@
         <h2>2. Data We Process</h2>
         <ul>
             <li><strong>App usage data (local only):</strong> Sprout requests Android's <code>android.permission.PACKAGE_USAGE_STATS</code> to count how long you use apps you select and to block or limit them. This usage data stays on your device and is not sent to me or any third party.</li>
+            <li><strong>Accessibility Service API (local only):</strong> Sprout utilizes the AccessibilityService API on Android to detect when short-form videos (like Instagram Reels) are opened so it can block them based on your focus settings. This detection happens entirely locally on your device. <strong>We do not collect, store, or share any personal data, screen content, or browsing behavior through this API.</strong></li>
             <li><strong>Account data:</strong> If you sign in, your email address is processed by <strong>Google Firebase Authentication</strong> to create and secure your account. I do not use your email for any other purpose.</li>
             <li><strong>Crash and error data:</strong> When the app crashes, technical reports (device model, OS version, stack trace, and similar diagnostic details) are sent to <strong>Sentry</strong> to fix stability issues. These reports are configured to exclude your app usage data and the list of apps you track.</li>
             <li><strong>Usage analytics:</strong> Aggregated, anonymous events about how you interact with the app (such as which screens you visit and which features you use) are sent to <strong>Firebase Analytics</strong>. These events do not include personal information such as your email address, the names of the apps you block, or your usage history. The data is used solely to understand how features are used and to improve the user experience.</li>
