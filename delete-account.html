@@ -4,19 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Account - Sprout</title>
+    <meta name="description" content="How to delete your Sprout account and local app data.">
+    <meta name="theme-color" content="#2f8f46">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>Sprout </h1>
-        </div>
+    <header class="site-header">
+        <a href="index.html" class="brand" aria-label="Sprout home">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>Sprout</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a href="index.html#features">Features</a>
+            <a href="index.html#screenshots">Screenshots</a>
+            <a href="privacy-policy.html">Privacy</a>
+        </nav>
     </header>
 
-    <main style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
-        <section class="privacy-content">
+    <main class="text-page">
+        <article class="text-content">
             <h1>Delete Account</h1>
-            <p>You can delete your Sprout account at any time. Deleting your account removes your Firebase authentication record (including your email) and stops any further processing connected to that account.</p>
+            <p>You can delete your Sprout account at any time. Deleting your account removes your Firebase authentication record (including your email) and your Cloud Firestore user document for synced earned time, streak, profile, onboarding preferences, and sync metadata.</p>
 
             <h2>Delete from the Sprout app (recommended)</h2>
             <ol>
@@ -26,11 +38,11 @@
                 <li>Follow the confirmation prompt to complete deletion.</li>
             </ol>
 
-            <p>App usage data is only stored locally on your device. Uninstalling the app or clearing its data removes that local information. If you need help deleting your account, reach out through the support contact listed in the app store or inside the app.</p>
-        </section>
+            <p>App usage data, blocked app identifiers, Screen Time tokens, temporary unblock timers, and proof photos are only stored locally on your device. Uninstalling the app or clearing its data removes that local information. If you need help deleting your account, reach out through the support contact listed in the app store or inside the app.</p>
+        </article>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 Pablo Galve. All rights reserved.</p>
         <div class="footer-links">
             <a href="privacy-policy.html">Privacy Policy</a>

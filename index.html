@@ -3,98 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sprout - Take Back Your Time</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <title>Sprout: Screen Time & Habits</title>
+    <meta name="description" content="Sprout helps you reduce screen time by replacing impulse scrolling with earned time and healthier habits. Download on App Store and Google Play.">
+    <meta property="og:title" content="Sprout: Screen Time & Habits">
+    <meta property="og:description" content="Reduce screen time by building habits that replace scrolling.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/app-store/en-US/01%20iphone%20Photo1.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#2f8f46">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header>
-        <a href="index.html" class="logo">Sprout</a>
-        <div class="nav-links">
-            <a href="index.html#features">Features</a>
+    <header class="site-header">
+        <a href="index.html" class="brand" aria-label="Sprout home">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>Sprout</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a href="#features">Features</a>
+            <a href="#screenshots">Screenshots</a>
             <a href="privacy-policy.html">Privacy</a>
-        </div>
+        </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>Escape the doomscroll. <br>Earn your time.</h1>
-            <p>Sprout helps you manage your screen time by hard-blocking your most distracting apps. Want to unlock them? You'll have to earn the time first.</p>
-            
-            <a href="https://play.google.com/store/apps/details?id=com.sprout.ds_labs" class="play-store-btn" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.609 1.814L13.792 12 3.61 22.186a2.08 2.08 0 01-.11-.692V2.506c0-.25.04-.488.11-.692z" fill="#00a0ff"/>
-                    <path d="M14.646 11.146l-10-10a2.124 2.124 0 011.642-.234l12.8 7.378-4.442 2.856z" fill="#00ed76"/>
-                    <path d="M14.646 12.854l4.442 2.856-12.8 7.378a2.126 2.126 0 01-1.642-.234l10-10z" fill="#ff3a44"/>
-                    <path d="M19.98 10.3l-5.334 3.064 5.334 3.064 1.488-.857c1.378-.795 1.378-2.084 0-2.87l-1.488-.857z" fill="#ffb700"/>
-                </svg>
-                <div class="play-store-text">
-                    <small>Get it on</small>
-                    <strong>Google Play</strong>
-                </div>
-            </a>
+        <section class="hero" id="download">
+            <div class="hero-copy">
+                <p class="eyebrow">Available on iPhone and Android</p>
+                <h1>Sprout</h1>
+                <p class="hero-lede">Reduce screen time without white-knuckle blocking. Sprout helps you earn scroll time through habits that move your day forward.</p>
 
-            <!-- Placeholder for a stunning app mockup image -->
-            <div class="mockup-container">
-                <div class="mockup-text">[ App UI Screenshot / Video Placeholder ]</div>
+                <div class="store-buttons" aria-label="Download Sprout">
+                    <a href="https://apps.apple.com/us/app/sprout-screen-time-habits/id6762459172" class="store-button" target="_blank" rel="noopener noreferrer" aria-label="Download Sprout on App Store">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M17.56 12.9c-.03-2.75 2.24-4.08 2.34-4.14-1.29-1.88-3.29-2.14-3.99-2.17-1.68-.18-3.31 1.01-4.16 1.01-.87 0-2.18-.99-3.59-.96-1.82.03-3.53 1.08-4.46 2.72-1.93 3.35-.49 8.27 1.36 10.98.93 1.33 2.01 2.81 3.42 2.76 1.38-.05 1.89-.88 3.56-.88 1.65 0 2.13.88 3.57.85 1.49-.02 2.43-1.34 3.32-2.68 1.07-1.52 1.5-3.02 1.52-3.1-.03-.01-2.86-1.09-2.89-4.39z"></path>
+                            <path d="M14.81 4.8c.74-.93 1.25-2.18 1.1-3.45-1.08.05-2.44.75-3.21 1.65-.68.79-1.29 2.09-1.12 3.31 1.22.09 2.46-.61 3.23-1.51z"></path>
+                        </svg>
+                        <span>
+                            <small>Download on</small>
+                            <strong>App Store</strong>
+                        </span>
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.sprout.ds_labs" class="store-button" target="_blank" rel="noopener noreferrer" aria-label="Get Sprout on Google Play">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M3.61 1.81 13.79 12 3.61 22.19a2.08 2.08 0 0 1-.11-.7V2.51c0-.25.04-.49.11-.7z" fill="#00a0ff"></path>
+                            <path d="m14.65 11.15-10-10a2.12 2.12 0 0 1 1.64-.24l12.8 7.38-4.44 2.86z" fill="#00ed76"></path>
+                            <path d="m14.65 12.85 4.44 2.86-12.8 7.38a2.13 2.13 0 0 1-1.64-.24l10-10z" fill="#ff3a44"></path>
+                            <path d="m19.98 10.3-5.33 3.06 5.33 3.07 1.49-.86c1.38-.79 1.38-2.08 0-2.87l-1.49-.86z" fill="#ffb700"></path>
+                        </svg>
+                        <span>
+                            <small>Get it on</small>
+                            <strong>Google Play</strong>
+                        </span>
+                    </a>
+                </div>
+
+                <div class="hero-points" aria-label="Sprout highlights">
+                    <span>Earn time</span>
+                    <span>Build habits</span>
+                    <span>Stay mindful</span>
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-label="Sprout app screenshots">
+                <img class="hero-shot hero-shot-left" src="assets/app-store/en-US/02%20iphone%20Photo2.png" alt="Sprout exercise activity screen" width="1290" height="2796" loading="lazy">
+                <img class="hero-shot hero-shot-main" src="assets/app-store/en-US/01%20iphone%20Photo1.png" alt="Sprout home screen showing earned time" width="1290" height="2796">
+                <img class="hero-shot hero-shot-right" src="assets/app-store/en-US/04%20iphone%20Photo4.png" alt="Sprout activity completion screen" width="1290" height="2796" loading="lazy">
             </div>
         </section>
 
-        <!-- Features Section -->
+        <section class="proof-strip" aria-label="Sprout benefits">
+            <div>
+                <strong>Positive control</strong>
+                <span>Replace endless feeds with small actions.</span>
+            </div>
+            <div>
+                <strong>Clear rewards</strong>
+                <span>Turn chores, exercise, and study into earned minutes.</span>
+            </div>
+            <div>
+                <strong>Private by design</strong>
+                <span>Your habit tools stay focused on your phone.</span>
+            </div>
+        </section>
+
         <section id="features" class="features">
-            <div class="section-title">
-                <h2>Why Sprout?</h2>
-                <p>Designed to be intentional, effective, and completely private.</p>
+            <div class="section-heading">
+                <p class="eyebrow">How Sprout works</p>
+                <h2>Less scrolling, more life.</h2>
+                <p>Sprout makes screen time visible and intentional, then gives you a better path before impulse wins.</p>
             </div>
 
             <div class="features-grid">
-                <!-- Feature 1 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                            <path d="M7 11V7a5 5 0 0110 0v4"></path>
+                            <path d="M5 12h14"></path>
+                            <path d="M12 5v14"></path>
                         </svg>
                     </div>
-                    <h3>Intelligent Blocking</h3>
-                    <p>Select your most addictive apps. Sprout places a strict overlay on them so you cannot access them out of pure habit.</p>
-                </div>
+                    <h3>Earn scroll time</h3>
+                    <p>Unlock minutes through real activities, then spend them with a clear budget.</p>
+                </article>
 
-                <!-- Feature 2 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"></path>
+                            <path d="M4 19V5"></path>
+                            <path d="M4 19h16"></path>
+                            <path d="m7 15 3-3 3 2 5-7"></path>
                         </svg>
                     </div>
-                    <h3>Earn Your Minutes</h3>
-                    <p>No more mindless scrolling. Accomplish goals, wait out a timer, or spend earned "Braincells" strictly to unblock an app for a set duration.</p>
-                </div>
+                    <h3>Build replacement habits</h3>
+                    <p>Choose activities like exercise, chores, study, or custom goals that make downtime feel earned.</p>
+                </article>
 
-                <!-- Feature 3 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
+                            <circle cx="12" cy="12" r="8"></circle>
+                            <path d="M12 8v5l3 2"></path>
                         </svg>
                     </div>
-                    <h3>Floating Timer</h3>
-                    <p>Stay aware of your time. When you unlock an app, a subtle floating timer reminds you exactly how many guilt-free minutes you have left.</p>
-                </div>
+                    <h3>Know what is left</h3>
+                    <p>Use timers and simple progress cues so app time stays deliberate, not automatic.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="screenshots" class="screenshots">
+            <div class="section-heading">
+                <p class="eyebrow">Inside Sprout</p>
+                <h2>Built around the moments that usually steal time.</h2>
+            </div>
+
+            <div class="screenshot-rail" aria-label="Sprout app screens">
+                <figure class="screenshot-card">
+                    <img src="assets/app-store/en-US/01%20iphone%20Photo1.png" alt="Sprout earned time home screen" width="1290" height="2796" loading="lazy">
+                </figure>
+                <figure class="screenshot-card">
+                    <img src="assets/app-store/en-US/02%20iphone%20Photo2.png" alt="Sprout pushups activity screen" width="1290" height="2796" loading="lazy">
+                </figure>
+                <figure class="screenshot-card">
+                    <img src="assets/app-store/en-US/03%20iphone%20Photo3.png" alt="Sprout book scanning activity screen" width="1290" height="2796" loading="lazy">
+                </figure>
+                <figure class="screenshot-card">
+                    <img src="assets/app-store/en-US/05%20iphone%20Photo5.png" alt="Sprout time history screen" width="1290" height="2796" loading="lazy">
+                </figure>
+            </div>
+        </section>
+
+        <section class="download-band" aria-label="Download Sprout">
+            <div>
+                <p class="eyebrow">Start today</p>
+                <h2>Download Sprout and make your next scroll intentional.</h2>
+            </div>
+            <div class="store-buttons">
+                <a href="https://apps.apple.com/us/app/sprout-screen-time-habits/id6762459172" class="store-button store-button-light" target="_blank" rel="noopener noreferrer" aria-label="Download Sprout on App Store">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M17.56 12.9c-.03-2.75 2.24-4.08 2.34-4.14-1.29-1.88-3.29-2.14-3.99-2.17-1.68-.18-3.31 1.01-4.16 1.01-.87 0-2.18-.99-3.59-.96-1.82.03-3.53 1.08-4.46 2.72-1.93 3.35-.49 8.27 1.36 10.98.93 1.33 2.01 2.81 3.42 2.76 1.38-.05 1.89-.88 3.56-.88 1.65 0 2.13.88 3.57.85 1.49-.02 2.43-1.34 3.32-2.68 1.07-1.52 1.5-3.02 1.52-3.1-.03-.01-2.86-1.09-2.89-4.39z"></path>
+                        <path d="M14.81 4.8c.74-.93 1.25-2.18 1.1-3.45-1.08.05-2.44.75-3.21 1.65-.68.79-1.29 2.09-1.12 3.31 1.22.09 2.46-.61 3.23-1.51z"></path>
+                    </svg>
+                    <span>
+                        <small>Download on</small>
+                        <strong>App Store</strong>
+                    </span>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.sprout.ds_labs" class="store-button store-button-light" target="_blank" rel="noopener noreferrer" aria-label="Get Sprout on Google Play">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M3.61 1.81 13.79 12 3.61 22.19a2.08 2.08 0 0 1-.11-.7V2.51c0-.25.04-.49.11-.7z" fill="#00a0ff"></path>
+                        <path d="m14.65 11.15-10-10a2.12 2.12 0 0 1 1.64-.24l12.8 7.38-4.44 2.86z" fill="#00ed76"></path>
+                        <path d="m14.65 12.85 4.44 2.86-12.8 7.38a2.13 2.13 0 0 1-1.64-.24l10-10z" fill="#ff3a44"></path>
+                        <path d="m19.98 10.3-5.33 3.06 5.33 3.07 1.49-.86c1.38-.79 1.38-2.08 0-2.87l-1.49-.86z" fill="#ffb700"></path>
+                    </svg>
+                    <span>
+                        <small>Get it on</small>
+                        <strong>Google Play</strong>
+                    </span>
+                </a>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 Pablo Galve. All rights reserved.</p>
         <div class="footer-links">
             <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="delete-account.html" style="font-size: 0.8rem; margin-left: 10px;">Delete Account</a>
+            <a href="delete-account.html">Delete Account</a>
         </div>
     </footer>
-
 </body>
 </html>
