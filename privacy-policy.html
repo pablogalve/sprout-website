@@ -12,8 +12,10 @@
     <link rel="icon" href="assets/sprout-icon.png" type="image/png">
     <link rel="apple-touch-icon" href="assets/sprout-icon.png">
     <link rel="stylesheet" href="style.css">
+    <script src="analytics-config.js" defer></script>
+    <script src="analytics.js" defer></script>
 </head>
-<body>
+<body data-analytics-page="privacy_policy">
 
     <header class="site-header">
         <a href="index.html" class="brand" aria-label="Sprout home">
@@ -23,7 +25,7 @@
         <nav class="site-nav" aria-label="Primary navigation">
             <a href="index.html#features">Features</a>
             <a href="index.html#screenshots">Screenshots</a>
-            <a href="privacy-policy.html">Privacy</a>
+            <a href="privacy-policy.html" data-analytics-event="legal_link_click" data-analytics-page-target="privacy_policy" data-analytics-location="header">Privacy</a>
         </nav>
     </header>
 
@@ -42,7 +44,7 @@
                 <li><strong>Account data:</strong> If you sign in, your email address is handled by <strong>Google Firebase Authentication</strong> so you can create and access your account. I do not use your email for marketing.</li>
                 <li><strong>Synced account state:</strong> If you sign in, Sprout stores your earned time balance, streaks, display name, profile and onboarding preferences, sync version, timestamps, and a device sync identifier in <strong>Google Cloud Firestore</strong> so account features can follow you across devices.</li>
                 <li><strong>Crash reports and optional feedback:</strong> When Sprout crashes, technical reports such as device model, operating system version, and stack trace may be sent to <strong>Sentry</strong> so I can fix stability issues. If you send feedback in the app, the message you write and similar technical details are sent to Sentry. Feedback does not ask for your name or email address, screenshots are disabled, and reports are configured to exclude your app usage data and selected blocked apps.</li>
-                <li><strong>Usage analytics:</strong> Sprout sends aggregated, anonymous app interaction events to <strong>Firebase Analytics</strong>, such as which screens or features are used. These events do not include your email address, selected blocked apps, proof photos, or app usage history. They are used only to understand and improve Sprout.</li>
+                <li><strong>Usage analytics:</strong> Sprout sends aggregated, anonymous app interaction events to <strong>Firebase Analytics</strong>, such as which screens or features are used. If you allow analytics on this website, Sprout also sends website page views and clicks on download, Privacy Policy, and Delete Account links to <strong>Google Analytics</strong>. These events do not include your email address, selected blocked apps, proof photos, or app usage history. They are used only to understand and improve Sprout.</li>
             </ul>
 
             <h2>3. Why We Use This Data</h2>
@@ -50,14 +52,14 @@
                 <li><strong>Provide Sprout:</strong> Local screen time and blocking data is used to deliver the features you choose to use.</li>
                 <li><strong>Account access and sync:</strong> Firebase uses your email for sign-in, and Firestore stores synced account state so earned time, streaks, and profile information can work across signed-in devices.</li>
                 <li><strong>Reliability and feedback:</strong> Crash reports and optional feedback help detect, debug, and prevent errors.</li>
-                <li><strong>Product improvement:</strong> Anonymous analytics help understand which features are used and improve the app. Sprout does not create or sell individual behavioral profiles.</li>
+                <li><strong>Product improvement:</strong> Anonymous analytics help understand which features and website links are used. Sprout does not create or sell individual behavioral profiles.</li>
             </ul>
 
             <h2>4. Third Parties and Locations</h2>
             <ul>
                 <li><strong>Firebase Authentication and Cloud Firestore (Google LLC):</strong> Firebase handles sign-in and account sync. Firestore stores only the signed-in account state listed above.</li>
                 <li><strong>Sentry (EU servers):</strong> crash reports, errors, and optional feedback are hosted in the European Union to support bug fixes. See <a class="text-link" href="https://sentry.io/privacy/" target="_blank" rel="noopener noreferrer">Sentry's Privacy Policy</a>.</li>
-                <li><strong>Firebase Analytics (Google LLC):</strong> anonymous usage events are processed by Google's infrastructure to provide aggregated analytics reports. See <a class="text-link" href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase's Privacy Information</a>.</li>
+                <li><strong>Firebase Analytics and Google Analytics (Google LLC):</strong> anonymous usage events are processed by Google's infrastructure to provide aggregated analytics reports. See <a class="text-link" href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase's Privacy Information</a> and <a class="text-link" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.</li>
             </ul>
             <p>I do not sell personal data and do not share it with other third parties.</p>
 
@@ -66,13 +68,14 @@
                 <li><strong>Local data:</strong> local screen time, blocking, activity, temporary unblock, and proof photo data stays on your device until you delete app data or uninstall Sprout.</li>
                 <li><strong>Account data:</strong> your Firebase authentication record and Firestore user document are kept while your account is active. When you delete your account, both are removed.</li>
                 <li><strong>Crash and feedback data:</strong> retained only as long as needed to investigate and fix issues, then removed under Sentry's retention settings.</li>
+                <li><strong>Website analytics:</strong> retained according to the Google Analytics property settings. You can decline website analytics from the website banner.</li>
             </ul>
 
             <h2>6. Your Rights (GDPR)</h2>
             <p>You can request access, rectification, deletion, restriction, portability, or objection to processing where applicable. You may withdraw consent where processing relies on it. To exercise your rights, use the in-app delete option or contact the provider using the support contact listed in the app store or within the app.</p>
 
             <h2>7. Deleting Your Data</h2>
-            <p>You can delete your account at any time from the app's <strong>Settings → Delete Account</strong> option. This removes your Firebase authentication record and your Firestore user document. Because screen time, blocking, activity, temporary unblock, and proof photo data is stored locally, uninstalling Sprout or clearing its app data removes that information from your device. For details, see the <a class="text-link" href="delete-account.html">Delete Account page</a>.</p>
+            <p>You can delete your account at any time from the app's <strong>Settings → Delete Account</strong> option. This removes your Firebase authentication record and your Firestore user document. Because screen time, blocking, activity, temporary unblock, and proof photo data is stored locally, uninstalling Sprout or clearing its app data removes that information from your device. For details, see the <a class="text-link" href="delete-account.html" data-analytics-event="legal_link_click" data-analytics-page-target="delete_account" data-analytics-location="privacy_policy_body">Delete Account page</a>.</p>
 
             <h2>8. Security</h2>
             <p>I take reasonable measures to protect data handled by Firebase Authentication, Cloud Firestore, and Sentry. Firestore security rules limit each signed-in user to their own user document. No method of transmission or storage is perfectly secure, so absolute security cannot be guaranteed.</p>
@@ -91,8 +94,8 @@
     <footer class="site-footer">
         <p>&copy; 2026 Pablo Galve. All rights reserved.</p>
         <div class="footer-links">
-            <a href="privacy-policy.html">Privacy Policy</a>
-            <a href="delete-account.html">Delete Account</a>
+            <a href="privacy-policy.html" data-analytics-event="legal_link_click" data-analytics-page-target="privacy_policy" data-analytics-location="footer">Privacy Policy</a>
+            <a href="delete-account.html" data-analytics-event="legal_link_click" data-analytics-page-target="delete_account" data-analytics-location="footer">Delete Account</a>
         </div>
     </footer>
 
