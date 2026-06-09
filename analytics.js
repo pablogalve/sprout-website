@@ -2,9 +2,8 @@
     const config = window.sproutAnalyticsConfig || {};
     const measurementId = config.ga4MeasurementId || "";
     const measurementIdPattern = /^G-[A-Z0-9]+$/;
-    const consentStorageKey = "sproutAnalyticsConsent";
-    const consentAcceptedValue = "accepted";
-    const consentDeclinedValue = "declined";
+    const visitSessionStorageKey = "sproutWebsiteVisitTracked";
+    const visitSessionStorageValue = "true";
     const eventTimeoutMilliseconds = 1200;
     const analyticsScriptBaseUrl = "https://www.googletagmanager.com/gtag/js?id=";
     const analyticsLinkSelector = "[data-analytics-event]";
@@ -19,25 +18,38 @@
         return navigator.doNotTrack === "1" || window.doNotTrack === "1" || navigator.msDoNotTrack === "1";
     }
 
-    function getStoredConsent() {
-        try {
-            return window.localStorage.getItem(consentStorageKey);
-        } catch (_) {
-            return null;
-        }
-    }
-
-    function storeConsent(value) {
-        try {
-            window.localStorage.setItem(consentStorageKey, value);
-        } catch (_) {}
-    }
-
     function initializeDataLayer() {
         window.dataLayer = window.dataLayer || [];
         window.gtag = function gtag() {
             window.dataLayer.push(arguments);
         };
+    }
+
+    function sanitizedLocation() {
+        return `${window.location.origin}${window.location.pathname}`;
+    }
+
+    function sanitizedHref(href) {
+        try {
+            const url = new URL(href, window.location.href);
+            return `${url.origin}${url.pathname}`;
+        } catch (_) {
+            return href;
+        }
+    }
+
+    function analyticsPageName() {
+        return document.body.dataset.analyticsPage || "unknown";
+    }
+
+    function shouldTrackVisit() {
+        try {
+            if (window.sessionStorage.getItem(visitSessionStorageKey) === visitSessionStorageValue) return false;
+            window.sessionStorage.setItem(visitSessionStorageKey, visitSessionStorageValue);
+            return true;
+        } catch (_) {
+            return true;
+        }
     }
 
     function configureAnalytics() {
@@ -46,12 +58,15 @@
             ad_personalization: "denied",
             ad_storage: "denied",
             ad_user_data: "denied",
-            analytics_storage: "granted",
+            analytics_storage: "denied",
         });
+        window.gtag("set", "ads_data_redaction", true);
         window.gtag("js", new Date());
         window.gtag("config", measurementId, {
             allow_ad_personalization_signals: false,
             allow_google_signals: false,
+            client_storage: "none",
+            page_location: sanitizedLocation(),
             page_path: window.location.pathname,
             page_title: document.title,
         });
@@ -59,14 +74,27 @@
 
     function trackEvent(name, parameters) {
         if (!window.gtag) return;
-        window.gtag("event", name, parameters);
+        window.gtag("event", name, {
+            transport_type: "beacon",
+            ...parameters,
+        });
+    }
+
+    function trackVisit() {
+        if (!shouldTrackVisit()) return;
+        trackEvent("website_visit", {
+            landing_page: analyticsPageName(),
+            page_location: sanitizedLocation(),
+            page_path: window.location.pathname,
+            page_title: document.title,
+        });
     }
 
     function trackPageView() {
-        const pageName = document.body.dataset.analyticsPage;
+        const pageName = analyticsPageName();
         if (!pageName) return;
         trackEvent("website_page_view", {
-            page_location: window.location.href,
+            page_location: sanitizedLocation(),
             page_path: window.location.pathname,
             page_title: document.title,
             website_page: pageName,
@@ -81,6 +109,7 @@
         script.src = `${analyticsScriptBaseUrl}${encodeURIComponent(measurementId)}`;
         document.head.append(script);
         window.sproutAnalyticsLoaded = true;
+        trackVisit();
         trackPageView();
     }
 
@@ -93,7 +122,7 @@
 
     function analyticsParametersFromLink(link) {
         const parameters = {
-            link_url: link.href,
+            link_url: sanitizedHref(link.href),
         };
         Object.entries(link.dataset).forEach(([key, value]) => {
             if (!key.startsWith(dataAttributePrefix) || key === eventAttributeName) return;
@@ -141,60 +170,10 @@
         });
     }
 
-    function removeConsentBanner() {
-        const banner = document.querySelector(".analytics-consent");
-        if (banner) banner.remove();
-    }
-
-    function acceptAnalytics() {
-        storeConsent(consentAcceptedValue);
-        removeConsentBanner();
-        loadAnalytics();
-    }
-
-    function declineAnalytics() {
-        storeConsent(consentDeclinedValue);
-        removeConsentBanner();
-    }
-
-    function createConsentButton(label, className, clickHandler) {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = className;
-        button.textContent = label;
-        button.addEventListener("click", clickHandler);
-        return button;
-    }
-
-    function showConsentBanner() {
-        const banner = document.createElement("section");
-        banner.className = "analytics-consent";
-        banner.setAttribute("aria-label", "Analytics preferences");
-
-        const message = document.createElement("p");
-        message.textContent = "Google Analytics helps measure visits and download clicks. No ads tracking.";
-
-        const actions = document.createElement("div");
-        actions.className = "analytics-consent-actions";
-        actions.append(
-            createConsentButton("Allow analytics", "analytics-consent-accept", acceptAnalytics),
-            createConsentButton("Decline", "analytics-consent-decline", declineAnalytics),
-        );
-
-        banner.append(message, actions);
-        document.body.append(banner);
-    }
-
     function initializeAnalytics() {
         attachLinkTracking();
         if (!hasValidMeasurementId() || hasDoNotTrackEnabled()) return;
-
-        const storedConsent = getStoredConsent();
-        if (storedConsent === consentAcceptedValue) {
-            loadAnalytics();
-            return;
-        }
-        if (storedConsent !== consentDeclinedValue) showConsentBanner();
+        loadAnalytics();
     }
 
     if (document.readyState === "loading") {
