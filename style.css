@@ -682,3 +682,9 @@ a {
     }
 
 }
+
+.low-visibility {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
