@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.sprout.ds_labs",
+      "sha256_cert_fingerprints": [
+        "1C:AD:97:F1:CF:D2:A1:3A:F4:F2:D1:0C:B6:68:BC:6F:D1:24:15:20:6E:E6:FD:ED:BC:74:88:96:9B:F3:39:7F"
+      ]
+    }
+  }
+]

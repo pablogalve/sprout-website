@@ -32,7 +32,7 @@
     <main class="text-page">
         <article class="text-content">
             <h1>Privacy Policy</h1>
-            <p class="last-updated">Last Updated: June 12, 2026</p>
+            <p class="last-updated">Last Updated: July 18, 2026</p>
 
             <h2>1. Who We Are</h2>
             <p>Sprout is provided by <strong>Pablo Galve</strong>, an individual developer. References to "I", "me", or "the provider" in this policy mean Pablo Galve.</p>
@@ -46,6 +46,10 @@
                 <li><strong>Referral source:</strong> During onboarding, Sprout may ask how you heard about the app. This optional response is used to understand which channels are most effective and to improve promotional efforts. It is not used for behavioral profiling or sold to third parties.</li>
                 <li><strong>Crash reports and optional feedback:</strong> When Sprout crashes, technical reports such as device model, operating system version, and stack trace may be sent to <strong>Sentry</strong> so I can fix stability issues. If you send feedback in the app, the message you write and similar technical details are sent to Sentry. Feedback does not ask for your name or email address, screenshots are disabled, and reports are configured to exclude your app usage data and selected blocked apps.</li>
                 <li><strong>Usage analytics:</strong> Sprout sends app interaction events to <strong>Firebase Analytics</strong>, such as which screens or features are used, onboarding progression, and referrer information (how you found Sprout). The mobile app stores a random analytics identifier on your device to measure retention and avoid counting the same app install as multiple users. This identifier is not your email address, name, phone number, or selected blocked apps, and it is not shown to other users. Analytics events do not include your email address, selected blocked apps, proof photos, or app usage history. They are used only to understand and improve Sprout.</li>
+                <li><strong>Subscription and purchase data:</strong> If you buy Sprout Premium, the purchase is processed by <strong>Google Play Billing</strong> and managed through <strong>RevenueCat</strong>. Sprout does not receive or store your card or payment details. RevenueCat processes a purchase token and an anonymized app user identifier linked to your signed-in account so your premium entitlement works across your devices. Your premium status and any time-limited free-unlock window are stored in your Firestore user document.</li>
+                <li><strong>Advertising data:</strong> If you choose to watch a rewarded ad to unlock premium temporarily, the ad is served by <strong>Google AdMob</strong>. AdMob may process your device's advertising identifier and standard ad-request data to show the ad and prevent fraud. Ads are optional and only shown when you tap to watch one.</li>
+                <li><strong>Survey responses:</strong> If you complete the optional in-app survey to unlock premium, your multiple-choice answers and your account identifier are stored in <strong>Google Cloud Firestore</strong> so I can understand user needs. The survey does not collect free-text personal information.</li>
+                <li><strong>Referral data:</strong> If you use the referral feature, Sprout stores your referral code and, if you redeem one, the code of the person who invited you in your Firestore user document, so referral rewards can be credited. Referral codes are pseudonymous identifiers derived from your account ID — they are not your name or email address. If you share your invite link, the message contains your referral code, and anyone you share it with can see it; Sprout does not access your contacts, as sharing happens through your device's system share sheet. Opening an invite link transmits the contained code to the app so it can be redeemed. Reward crediting is processed on Sprout's servers using purchase events from <strong>RevenueCat</strong> (see Third Parties below).</li>
             </ul>
 
             <h2>3. Why We Use This Data</h2>
@@ -54,6 +58,8 @@
                 <li><strong>Account access and sync:</strong> Firebase uses your email for sign-in, and Firestore stores synced account state so earned time, streaks, and profile information can work across signed-in devices.</li>
                 <li><strong>Reliability and feedback:</strong> Crash reports and optional feedback help detect, debug, and prevent errors.</li>
                 <li><strong>Product improvement:</strong> Analytics help understand retention and which features and website links are used. Sprout does not create or sell individual behavioral profiles.</li>
+                <li><strong>Premium and payments:</strong> Purchase and subscription data is used to grant and restore your Sprout Premium access and to keep it in sync across your signed-in devices.</li>
+                <li><strong>Free unlock options:</strong> Advertising, survey, and referral data are used to grant time-limited or reward-based premium access to users who prefer not to pay, and to prevent abuse of those options.</li>
             </ul>
 
             <h2>4. Third Parties and Locations</h2>
@@ -61,6 +67,9 @@
                 <li><strong>Firebase Authentication and Cloud Firestore (Google LLC):</strong> Firebase handles sign-in and account sync. Firestore stores only the signed-in account state listed above.</li>
                 <li><strong>Sentry (EU servers):</strong> crash reports, errors, and optional feedback are hosted in the European Union to support bug fixes. See <a class="text-link" href="https://sentry.io/privacy/" target="_blank" rel="noopener noreferrer">Sentry's Privacy Policy</a>.</li>
                 <li><strong>Firebase Analytics (Google LLC):</strong> app usage events and the mobile analytics identifier are processed by Google's infrastructure to provide aggregated analytics reports. The website does not set a user ID for analytics. See <a class="text-link" href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase's Privacy Information</a> and <a class="text-link" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.</li>
+                <li><strong>Google Play Billing (Google LLC):</strong> processes premium purchases. Payment details are handled by Google, not by Sprout. See <a class="text-link" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.</li>
+                <li><strong>RevenueCat, Inc.:</strong> manages subscription entitlements using a purchase token and an anonymized app user identifier. See <a class="text-link" href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">RevenueCat's Privacy Policy</a>.</li>
+                <li><strong>Google AdMob (Google LLC):</strong> serves optional rewarded ads and may process your advertising identifier. See <a class="text-link" href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">AdMob's data disclosures</a> and <a class="text-link" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.</li>
             </ul>
             <p>I do not sell personal data and do not share it with other third parties.</p>
 
@@ -70,6 +79,7 @@
                 <li><strong>Account data:</strong> your Firebase authentication record and Firestore user document are kept while your account is active. When you delete your account, both are removed.</li>
                 <li><strong>Analytics data:</strong> the mobile analytics identifier stays on your device until you uninstall Sprout or clear app data. Firebase Analytics events are retained according to Firebase and Google Analytics retention settings.</li>
                 <li><strong>Crash and feedback data:</strong> retained only as long as needed to investigate and fix issues, then removed under Sentry's retention settings.</li>
+                <li><strong>Purchase, survey, and referral data:</strong> premium status, free-unlock windows, survey answers, and referral codes are stored in your Firestore user document (survey answers in a separate survey collection linked to your account identifier) and are removed when you delete your account. RevenueCat and Google Play retain purchase records under their own policies and to meet legal and tax obligations.</li>
             </ul>
 
             <h2>6. Your Rights (GDPR)</h2>
