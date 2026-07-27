@@ -2,18 +2,84 @@
 
 Both self-hosted runners (`dev-mac`, `dev-mac-2`) run as LaunchAgents under the
 interactive account `pablogalve`, sharing its `$HOME`, `~/fvm`, and login
-keychain. That sharing is why a CI FVM operation could race the interactive
-shell on `~/fvm/cache.git` and leave a checked-out repo's `remote.origin` set to
-`~/fvm/cache.git` with a mirror fetch refspec — breaking `git pull`/`fetch`.
+keychain.
 
-Isolation has two layers:
+## Root cause of the recurring git corruption
 
-- **Layer A (done, in-repo):** `.github/actions/setup-fvm` sets a per-runner
-  `FVM_CACHE_PATH=$HOME/fvm-ci/<RUNNER_NAME>`. No two runners — and no
-  interactive shell — share one `cache.git`. This alone removes the race.
-- **Layer B (this runbook, machine-side):** move both runners to a dedicated
+Symptom: an interactive `git fetch`/`pull` on the Sprout clone fails with
+`fatal: '/Users/pablogalve/fvm/cache.git' does not appear to be a git
+repository`. On inspection the clone's `remote.origin.url` had been rewritten to
+`~/fvm/cache.git` with a mirror fetch refspec (`+refs/heads/*:refs/heads/*`) and
+`tagopt=--no-tags`, and `~/fvm/cache.git` was not a Flutter mirror at all but an
+88 MB **copy of the Sprout working tree** with no `.git` inside.
+
+The writer is FVM's **git cache** machinery. With `useGitCache` on, FVM manages a
+`~/fvm/cache.git` reference clone; on this host that code path intermittently
+mangled both `cache.git` (filling it with project files) and the *project's*
+`remote.origin`. Because `remote.*` lives in the **shared** config across all
+git worktrees of a repo, one bad write breaks the interactive clone and every
+worktree at once. Per-runner cache paths did not stop it — the writer is the git
+cache itself, not cross-runner contention.
+
+## Fixes, in order of impact
+
+- **Primary (done):** git cache disabled. Machine: `fvm config
+  --no-use-git-cache`. CI: `.github/actions/setup-fvm` runs the same, so every
+  runner and future runner has it off. No `cache.git` exists, so nothing can be
+  injected. Cost: a new Flutter version clones directly from GitHub (one-time per
+  version); installed versions are unaffected. The polluted `~/fvm/cache.git`
+  was quarantined to `~/fvm/cache.git.polluted-<ts>` and can be deleted once
+  confidence is high.
+- **Layer A (done, in-repo):** `setup-fvm` sets a per-runner
+  `FVM_CACHE_PATH=$HOME/fvm-ci/<RUNNER_NAME>` so concurrent installs never race
+  one versions dir.
+- **Layer B (runbook below, machine-side):** move both runners to a dedicated
   macOS user `ci-runner` so CI cannot touch the interactive account's `$HOME` or
-  keychain at all.
+  keychain at all — defense in depth.
+
+### If corruption ever reappears
+
+Repair the clone (fixes all worktrees, since the remote config is shared):
+
+```bash
+git remote set-url origin https://github.com/pablogalve/Sprout.git
+git config --replace-all remote.origin.fetch '+refs/heads/*:refs/remotes/origin/*'
+git config --unset remote.origin.tagopt || true
+```
+
+Then confirm `fvm api context` shows `"gitCache": false`; if not, re-run
+`fvm config --no-use-git-cache`.
+
+## Auto-heal guard (belt-and-suspenders)
+
+A launchd agent watches the shared `.git/config` and, if the corruption ever
+reappears, repairs `remote.origin` within ~1s and logs a forensic snapshot of
+the candidate writer. It is a no-op unless the exact corruption is present, so
+it never fights a legitimate remote change.
+
+Canonical source lives in the repo:
+
+- `scripts/sprout-git-origin-guard.sh` — detect + repair + log. Repo path is
+  overridable via `SPROUT_GUARD_REPO`; log via `SPROUT_GUARD_LOG`
+  (default `~/Library/Logs/sprout-origin-guard.log`).
+- `scripts/com.pablogalve.sprout-origin-guard.plist` — the launchd
+  `WatchPaths` agent.
+
+Install (already done on the current host):
+
+```bash
+mkdir -p ~/.local/bin ~/Library/Logs
+cp scripts/sprout-git-origin-guard.sh ~/.local/bin/
+chmod +x ~/.local/bin/sprout-git-origin-guard.sh
+cp scripts/com.pablogalve.sprout-origin-guard.plist ~/Library/LaunchAgents/
+launchctl bootout  gui/$(id -u)/com.pablogalve.sprout-origin-guard 2>/dev/null
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.pablogalve.sprout-origin-guard.plist
+```
+
+Verify: `launchctl print gui/$(id -u)/com.pablogalve.sprout-origin-guard | grep watching`
+should show `watching = 1`. It re-loads automatically at login. If the guard
+ever fires, `~/Library/Logs/sprout-origin-guard.log` names the process that held
+the config open — that is the writer to chase upstream.
 
 ## Layer B runbook
 
