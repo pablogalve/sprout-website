@@ -1,10 +1,214 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://the-sprout.app/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/"/>
         <lastmod>2026-08-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/es/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/de/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/blog/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/es/blog/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/de/blog/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/blog/block-short-form-video/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/block-short-form-video/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/bloquear-videos-cortos/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/kurzvideos-blockieren/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/block-short-form-video/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/es/blog/bloquear-videos-cortos/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/block-short-form-video/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/bloquear-videos-cortos/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/kurzvideos-blockieren/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/block-short-form-video/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/de/blog/kurzvideos-blockieren/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/block-short-form-video/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/bloquear-videos-cortos/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/kurzvideos-blockieren/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/block-short-form-video/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/blog/screen-time-app-alternatives/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/screen-time-app-alternatives/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/alternativas-apps-tiempo-pantalla/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/bildschirmzeit-app-alternativen/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/screen-time-app-alternatives/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/es/blog/alternativas-apps-tiempo-pantalla/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/screen-time-app-alternatives/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/alternativas-apps-tiempo-pantalla/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/bildschirmzeit-app-alternativen/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/screen-time-app-alternatives/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/de/blog/bildschirmzeit-app-alternativen/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/screen-time-app-alternatives/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/alternativas-apps-tiempo-pantalla/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/bildschirmzeit-app-alternativen/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/screen-time-app-alternatives/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/blog/stop-doomscrolling/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/stop-doomscrolling/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/dejar-de-hacer-doomscrolling/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/doomscrolling-stoppen/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/stop-doomscrolling/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/es/blog/dejar-de-hacer-doomscrolling/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/stop-doomscrolling/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/dejar-de-hacer-doomscrolling/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/doomscrolling-stoppen/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/stop-doomscrolling/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/de/blog/doomscrolling-stoppen/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/stop-doomscrolling/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/dejar-de-hacer-doomscrolling/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/doomscrolling-stoppen/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/stop-doomscrolling/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/blog/screen-time-not-working/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/screen-time-not-working/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/tiempo-de-uso-no-funciona/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/bildschirmzeit-funktioniert-nicht/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/screen-time-not-working/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/es/blog/tiempo-de-uso-no-funciona/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/screen-time-not-working/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/tiempo-de-uso-no-funciona/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/bildschirmzeit-funktioniert-nicht/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/screen-time-not-working/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/de/blog/bildschirmzeit-funktioniert-nicht/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/screen-time-not-working/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/tiempo-de-uso-no-funciona/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/bildschirmzeit-funktioniert-nicht/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/screen-time-not-working/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/blog/best-apps-block-short-videos/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/best-apps-block-short-videos/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/mejores-apps-bloquear-videos-cortos/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/beste-apps-kurzvideos-blockieren/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/best-apps-block-short-videos/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/es/blog/mejores-apps-bloquear-videos-cortos/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/best-apps-block-short-videos/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/mejores-apps-bloquear-videos-cortos/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/beste-apps-kurzvideos-blockieren/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/best-apps-block-short-videos/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/de/blog/beste-apps-kurzvideos-blockieren/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/best-apps-block-short-videos/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/mejores-apps-bloquear-videos-cortos/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/beste-apps-kurzvideos-blockieren/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/best-apps-block-short-videos/"/>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://the-sprout.app/privacy-policy.html</loc>

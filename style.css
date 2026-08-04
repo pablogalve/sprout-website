@@ -390,8 +390,10 @@ a {
 }
 
 .screenshot-card img {
+    display: block;
     width: 100%;
     height: auto;
+    border-radius: 2rem;
 }
 
 .download-band {
@@ -433,6 +435,7 @@ a {
 
 .footer-links {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
@@ -444,6 +447,28 @@ a {
 
 .footer-links a:hover {
     text-decoration: underline;
+}
+
+.language-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    gap: 0.9rem;
+    font-size: 0.9rem;
+}
+
+.language-switcher a {
+    color: var(--surface);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.language-switcher a:hover {
+    text-decoration: underline;
+}
+
+.language-switcher a[aria-current="true"] {
+    opacity: 0.55;
 }
 
 .text-page {
