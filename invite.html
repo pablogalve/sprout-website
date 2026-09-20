@@ -49,10 +49,12 @@
             <p><a id="open-app" href="sprout://invite">Open the invite in the app</a></p>
 
             <h2>New to Sprout?</h2>
-            <p>Install the app, sign in, then paste the code under
-               <em>Invite friends</em>.</p>
+            <p>Install the app and sign in. On Android the code comes with
+               the install. On iPhone the App Store button copies it: when
+               Sprout asks where you heard about it, choose <em>Friend</em>
+               and paste it.</p>
             <div class="store-buttons" aria-label="Download Sprout">
-                <a href="https://apps.apple.com/us/app/sprout-screen-time-habits/id6762459172" class="store-button" target="_blank" rel="noopener noreferrer" aria-label="Download Sprout on App Store" data-analytics-event="download_click" data-analytics-download-platform="ios" data-analytics-store="app_store" data-analytics-location="invite">
+                <a id="app-store-link" href="https://apps.apple.com/us/app/sprout-screen-time-habits/id6762459172" class="store-button" target="_blank" rel="noopener noreferrer" aria-label="Download Sprout on App Store" data-analytics-event="download_click" data-analytics-download-platform="ios" data-analytics-store="app_store" data-analytics-location="invite">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M17.56 12.9c-.03-2.75 2.24-4.08 2.34-4.14-1.29-1.88-3.29-2.14-3.99-2.17-1.68-.18-3.31 1.01-4.16 1.01-.87 0-2.18-.99-3.59-.96-1.82.03-3.53 1.08-4.46 2.72-1.93 3.35-.49 8.27 1.36 10.98.93 1.33 2.01 2.81 3.42 2.76 1.38-.05 1.89-.88 3.56-.88 1.65 0 2.13.88 3.57.85 1.49-.02 2.43-1.34 3.32-2.68 1.07-1.52 1.5-3.02 1.52-3.1-.03-.01-2.86-1.09-2.89-4.39z"></path>
                         <path d="M14.81 4.8c.74-.93 1.25-2.18 1.1-3.45-1.08.05-2.44.75-3.21 1.65-.68.79-1.29 2.09-1.12 3.31 1.22.09 2.46-.61 3.23-1.51z"></path>
@@ -62,7 +64,7 @@
                         <strong>App Store</strong>
                     </span>
                 </a>
-                <a href="https://play.google.com/store/apps/details?id=com.sprout.ds_labs" class="store-button" target="_blank" rel="noopener noreferrer" aria-label="Get Sprout on Google Play" data-analytics-event="download_click" data-analytics-download-platform="android" data-analytics-store="google_play" data-analytics-location="invite">
+                <a id="play-store-link" href="https://play.google.com/store/apps/details?id=com.sprout.ds_labs" class="store-button" target="_blank" rel="noopener noreferrer" aria-label="Get Sprout on Google Play" data-analytics-event="download_click" data-analytics-download-platform="android" data-analytics-store="google_play" data-analytics-location="invite">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M3.61 1.81 13.79 12 3.61 22.19a2.08 2.08 0 0 1-.11-.7V2.51c0-.25.04-.49.11-.7z" fill="#00a0ff"></path>
                         <path d="m14.65 11.15-10-10a2.12 2.12 0 0 1 1.64-.24l12.8 7.38-4.44 2.86z" fill="#00ed76"></path>
@@ -111,6 +113,14 @@
             if (code) {
                 codeElement.textContent = code;
                 openAppLink.href = 'sprout://invite?code=' + encodeURIComponent(code);
+                // Play returns the referrer to the app on first launch
+                // (ReferralLinks.tryParseInstallReferrer); the App Store has
+                // no equivalent, so iPhone users paste the copied code.
+                var playStoreLink = document.getElementById('play-store-link');
+                playStoreLink.href += '&referrer=' + encodeURIComponent('code=' + code);
+                document.getElementById('app-store-link').addEventListener('click', function () {
+                    if (navigator.clipboard) navigator.clipboard.writeText(code);
+                });
             } else {
                 codeElement.textContent = 'Ask your friend for their invite link';
                 copyButton.style.display = 'none';
