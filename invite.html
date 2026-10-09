@@ -32,39 +32,44 @@
 
     <main class="text-page">
         <div class="text-content">
-            <h1>You're invited to Sprout</h1>
-            <p>A friend invited you to Sprout, the app that turns screen time
+            <div class="invite-language">
+                <label for="invite-language" data-i18n="languageLabel">Language</label>
+                <select id="invite-language"></select>
+            </div>
+
+            <h1 data-i18n="title">You're invited to Sprout</h1>
+            <p data-i18n="intro">A friend invited you to Sprout, the app that turns screen time
                into something you earn. Join with their referral code and you
                both get free premium time.</p>
 
-            <h2>Your invite code</h2>
+            <h2 data-i18n="codeHeading">Your invite code</h2>
             <p><strong id="invite-code" style="font-size: 1.5em; letter-spacing: 0.05em;">&mdash;</strong></p>
             <p>
                 <button id="copy-code" type="button" class="store-button" style="cursor: pointer;">
-                    <span><strong>Copy code</strong></span>
+                    <span><strong id="copy-code-label">Copy code</strong></span>
                 </button>
             </p>
 
-            <h2>Already have Sprout?</h2>
-            <p><a id="open-app" href="sprout://invite">Open the invite in the app</a></p>
+            <h2 data-i18n="haveAppHeading">Already have Sprout?</h2>
+            <p><a id="open-app" href="sprout://invite" data-i18n="openApp">Open the invite in the app</a></p>
 
-            <h2>New to Sprout?</h2>
-            <p>Install the app and sign in. On Android the code comes with
+            <h2 data-i18n="newHeading">New to Sprout?</h2>
+            <p id="new-steps">Install the app and sign in. On Android the code comes with
                the install. On iPhone the App Store button copies it: when
                Sprout asks where you heard about it, choose <em>Friend</em>
                and paste it.</p>
             <div class="store-buttons" aria-label="Download Sprout">
-                <a id="app-store-link" href="https://apps.apple.com/us/app/sprout-screen-time-habits/id6762459172" class="store-button" target="_blank" rel="noopener noreferrer" aria-label="Download Sprout on App Store" data-analytics-event="download_click" data-analytics-download-platform="ios" data-analytics-store="app_store" data-analytics-location="invite">
+                <a id="app-store-link" href="https://apps.apple.com/app/id6762459172" class="store-button" target="_blank" rel="noopener noreferrer" data-analytics-event="download_click" data-analytics-download-platform="ios" data-analytics-store="app_store" data-analytics-location="invite">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M17.56 12.9c-.03-2.75 2.24-4.08 2.34-4.14-1.29-1.88-3.29-2.14-3.99-2.17-1.68-.18-3.31 1.01-4.16 1.01-.87 0-2.18-.99-3.59-.96-1.82.03-3.53 1.08-4.46 2.72-1.93 3.35-.49 8.27 1.36 10.98.93 1.33 2.01 2.81 3.42 2.76 1.38-.05 1.89-.88 3.56-.88 1.65 0 2.13.88 3.57.85 1.49-.02 2.43-1.34 3.32-2.68 1.07-1.52 1.5-3.02 1.52-3.1-.03-.01-2.86-1.09-2.89-4.39z"></path>
                         <path d="M14.81 4.8c.74-.93 1.25-2.18 1.1-3.45-1.08.05-2.44.75-3.21 1.65-.68.79-1.29 2.09-1.12 3.31 1.22.09 2.46-.61 3.23-1.51z"></path>
                     </svg>
                     <span>
-                        <small>Download on</small>
-                        <strong>App Store</strong>
+                        <small data-i18n="appStoreSmall">Download on the</small>
+                        <strong data-i18n="appStoreLarge">App Store</strong>
                     </span>
                 </a>
-                <a id="play-store-link" href="https://play.google.com/store/apps/details?id=com.sprout.ds_labs" class="store-button" target="_blank" rel="noopener noreferrer" aria-label="Get Sprout on Google Play" data-analytics-event="download_click" data-analytics-download-platform="android" data-analytics-store="google_play" data-analytics-location="invite">
+                <a id="play-store-link" href="https://play.google.com/store/apps/details?id=com.sprout.ds_labs" class="store-button" target="_blank" rel="noopener noreferrer" data-analytics-event="download_click" data-analytics-download-platform="android" data-analytics-store="google_play" data-analytics-location="invite">
                     <svg viewBox="0 0 24 24" aria-hidden="true">
                         <path d="M3.61 1.81 13.79 12 3.61 22.19a2.08 2.08 0 0 1-.11-.7V2.51c0-.25.04-.49.11-.7z" fill="#00a0ff"></path>
                         <path d="m14.65 11.15-10-10a2.12 2.12 0 0 1 1.64-.24l12.8 7.38-4.44 2.86z" fill="#00ed76"></path>
@@ -72,14 +77,14 @@
                         <path d="m19.98 10.3-5.33 3.06 5.33 3.07 1.49-.86c1.38-.79 1.38-2.08 0-2.87l-1.49-.86z" fill="#ffb700"></path>
                     </svg>
                     <span>
-                        <small>Get it on</small>
-                        <strong>Google Play</strong>
+                        <small data-i18n="playSmall">Get it on</small>
+                        <strong data-i18n="playLarge">Google Play</strong>
                     </span>
                 </a>
             </div>
 
-            <p><small>Referral rewards are subject to the
-               <a href="terms-of-service.html" data-analytics-event="legal_link_click" data-analytics-page-target="terms_of_service" data-analytics-location="invite">Terms of Service</a>.</small></p>
+            <p><small id="rewards-terms">Referral rewards are subject to the
+               <a id="terms-link" href="terms-of-service.html" data-analytics-event="legal_link_click" data-analytics-page-target="terms_of_service" data-analytics-location="invite">Terms of Service</a>.</small></p>
         </div>
     </main>
 
@@ -92,46 +97,398 @@
             <a href="delete-account.html" data-analytics-event="legal_link_click" data-analytics-page-target="delete_account" data-analytics-location="footer">Delete Account</a>
             <a href="impressum.html" data-analytics-event="legal_link_click" data-analytics-page-target="impressum" data-analytics-location="footer" class="low-visibility">Impressum</a>
         </div>
-        <nav class="language-switcher" aria-label="Language">
-            <a href="index.html" hreflang="en" lang="en" aria-current="true" data-analytics-event="language_switch" data-analytics-language="en">English</a>
-            <a href="es/index.html" hreflang="es" lang="es" data-analytics-event="language_switch" data-analytics-language="es">Espa&ntilde;ol</a>
-            <a href="de/index.html" hreflang="de" lang="de" data-analytics-event="language_switch" data-analytics-language="de">Deutsch</a>
-        </nav>
     </footer>
+
+    <script type="application/json" id="invite-strings">
+        {
+            "en": {
+                "languageName": "English",
+                "title": "You're invited to Sprout",
+                "intro": "A friend invited you to Sprout, the app that turns screen time into something you earn. Join with their referral code and you both get free premium time.",
+                "codeHeading": "Your invite code",
+                "copyCode": "Copy code",
+                "copied": "Code copied",
+                "noCode": "Ask your friend for their invite link",
+                "haveAppHeading": "Already have Sprout?",
+                "openApp": "Open the invite in the app",
+                "newHeading": "New to Sprout?",
+                "newSteps": "Install the app and sign in. On Android the code comes with the install. On iPhone the App Store button copies it: when Sprout asks where you heard about it, choose {friend} and paste it.",
+                "friend": "Friend",
+                "appStoreSmall": "Download on the",
+                "appStoreLarge": "App Store",
+                "playSmall": "Get it on",
+                "playLarge": "Google Play",
+                "rewardsTerms": "Referral rewards are subject to the {link}.",
+                "termsLink": "Terms of Service",
+                "languageLabel": "Language"
+            },
+            "es": {
+                "languageName": "Español (España)",
+                "title": "Te han invitado a Sprout",
+                "intro": "Un amigo te ha invitado a Sprout, la app que convierte el tiempo de pantalla en algo que te ganas. Únete con su código de invitación y los dos tendréis premium gratis durante un tiempo.",
+                "codeHeading": "Tu código de invitación",
+                "copyCode": "Copiar código",
+                "copied": "Código copiado",
+                "noCode": "Pídele a tu amigo su enlace de invitación",
+                "haveAppHeading": "¿Ya tienes Sprout?",
+                "openApp": "Abrir la invitación en la app",
+                "newHeading": "¿Todavía no tienes Sprout?",
+                "newSteps": "Instala la app e inicia sesión. En Android, el código llega con la instalación. En iPhone, el botón de la App Store lo copia: cuando Sprout te pregunte cómo lo has conocido, elige {friend} y pégalo.",
+                "friend": "Amigo",
+                "appStoreSmall": "Descárgalo en la",
+                "appStoreLarge": "App Store",
+                "playSmall": "Disponible en",
+                "playLarge": "Google Play",
+                "rewardsTerms": "Las recompensas por invitación están sujetas a las {link}.",
+                "termsLink": "Condiciones del servicio",
+                "languageLabel": "Idioma"
+            },
+            "es-419": {
+                "languageName": "Español (Latinoamérica)",
+                "title": "Te invitaron a Sprout",
+                "intro": "Un amigo te invitó a Sprout, la app que convierte el tiempo de pantalla en algo que te ganas. Únete con su código de invitación y los dos tendrán premium gratis por un tiempo.",
+                "codeHeading": "Tu código de invitación",
+                "copyCode": "Copiar código",
+                "copied": "Código copiado",
+                "noCode": "Pídele a tu amigo su enlace de invitación",
+                "haveAppHeading": "¿Ya tienes Sprout?",
+                "openApp": "Abrir la invitación en la app",
+                "newHeading": "¿Todavía no tienes Sprout?",
+                "newSteps": "Instala la app e inicia sesión. En Android, el código llega con la instalación. En iPhone, el botón de App Store lo copia: cuando Sprout te pregunte cómo lo conociste, elige {friend} y pégalo.",
+                "friend": "Amigo",
+                "appStoreSmall": "Descárgalo en el",
+                "appStoreLarge": "App Store",
+                "playSmall": "Disponible en",
+                "playLarge": "Google Play",
+                "rewardsTerms": "Las recompensas por invitación están sujetas a los {link}.",
+                "termsLink": "Términos del servicio",
+                "languageLabel": "Idioma"
+            },
+            "de": {
+                "languageName": "Deutsch",
+                "title": "Du wurdest zu Sprout eingeladen",
+                "intro": "Ein Freund hat dich zu Sprout eingeladen, der App, mit der du dir deine Bildschirmzeit verdienst. Tritt mit seinem Einladungscode bei und ihr bekommt beide eine Zeit lang Premium gratis.",
+                "codeHeading": "Dein Einladungscode",
+                "copyCode": "Code kopieren",
+                "copied": "Code kopiert",
+                "noCode": "Frag deinen Freund nach seinem Einladungslink",
+                "haveAppHeading": "Sprout schon installiert?",
+                "openApp": "Einladung in der App öffnen",
+                "newHeading": "Neu bei Sprout?",
+                "newSteps": "Installiere die App und melde dich an. Auf Android kommt der Code mit der Installation. Auf dem iPhone kopiert ihn der App-Store-Button: Wenn Sprout fragt, wie du davon erfahren hast, wähle {friend} und füge ihn ein.",
+                "friend": "Freund",
+                "appStoreSmall": "Laden im",
+                "appStoreLarge": "App Store",
+                "playSmall": "Jetzt bei",
+                "playLarge": "Google Play",
+                "rewardsTerms": "Für Empfehlungsprämien gelten die {link}.",
+                "termsLink": "Nutzungsbedingungen",
+                "languageLabel": "Sprache"
+            },
+            "ca": {
+                "languageName": "Català",
+                "title": "T'han convidat a Sprout",
+                "intro": "Un amic t'ha convidat a Sprout, l'app que converteix el temps de pantalla en una cosa que et guanyes. Uneix-t'hi amb el seu codi d'invitació i tots dos tindreu Premium gratis durant un temps.",
+                "codeHeading": "El teu codi d'invitació",
+                "copyCode": "Copia el codi",
+                "copied": "S'ha copiat el codi",
+                "noCode": "Demana al teu amic el seu enllaç d'invitació",
+                "haveAppHeading": "Ja tens Sprout?",
+                "openApp": "Obre la invitació a l'app",
+                "newHeading": "Encara no tens Sprout?",
+                "newSteps": "Instal·la l'app i inicia la sessió. A Android, el codi arriba amb la instal·lació. A l'iPhone, el botó de l'App Store el copia: quan Sprout et pregunti com l'has conegut, tria {friend} i enganxa'l.",
+                "friend": "Un amic",
+                "appStoreSmall": "Baixa-la a l'",
+                "appStoreLarge": "App Store",
+                "playSmall": "Disponible a",
+                "playLarge": "Google Play",
+                "rewardsTerms": "Les recompenses per invitació estan subjectes a les {link}.",
+                "termsLink": "Condicions del servei",
+                "languageLabel": "Idioma"
+            },
+            "fr": {
+                "languageName": "Français",
+                "title": "On t'invite sur Sprout",
+                "intro": "Un ami t'invite sur Sprout, l'appli qui transforme le temps d'écran en quelque chose qui se mérite. Inscris-toi avec son code de parrainage et vous recevez tous les deux du temps Premium gratuit.",
+                "codeHeading": "Ton code d'invitation",
+                "copyCode": "Copier le code",
+                "copied": "Code copié",
+                "noCode": "Demande son lien d'invitation à ton ami",
+                "haveAppHeading": "Tu as déjà Sprout ?",
+                "openApp": "Ouvrir l'invitation dans l'appli",
+                "newHeading": "Pas encore Sprout ?",
+                "newSteps": "Installe l'appli et connecte-toi. Sur Android, le code arrive avec l'installation. Sur iPhone, le bouton App Store le copie : quand Sprout te demande comment tu l'as connu, choisis {friend} et colle-le.",
+                "friend": "Un ami",
+                "appStoreSmall": "Télécharger dans l'",
+                "appStoreLarge": "App Store",
+                "playSmall": "Disponible sur",
+                "playLarge": "Google Play",
+                "rewardsTerms": "Les récompenses de parrainage sont soumises aux {link}.",
+                "termsLink": "Conditions d'utilisation",
+                "languageLabel": "Langue"
+            },
+            "pt": {
+                "languageName": "Português (Brasil)",
+                "title": "Seu convite para o Sprout",
+                "intro": "Um amigo convidou você para o Sprout, o app que transforma tempo de tela em algo que você conquista. Entre com o código de indicação e vocês dois ganham premium grátis por um tempo.",
+                "codeHeading": "Seu código de convite",
+                "copyCode": "Copiar código",
+                "copied": "Código copiado",
+                "noCode": "Peça o link de convite para quem te indicou",
+                "haveAppHeading": "Já tem o Sprout?",
+                "openApp": "Abrir o convite no app",
+                "newHeading": "Ainda não tem o Sprout?",
+                "newSteps": "Instale o app e entre na sua conta. No Android, o código vem junto com a instalação. No iPhone, o botão da App Store copia o código: quando o Sprout perguntar onde você conheceu o app, escolha {friend} e cole o código.",
+                "friend": "Amigo",
+                "appStoreSmall": "Baixar na",
+                "appStoreLarge": "App Store",
+                "playSmall": "Disponível no",
+                "playLarge": "Google Play",
+                "rewardsTerms": "As recompensas de indicação estão sujeitas aos {link}.",
+                "termsLink": "Termos de Serviço",
+                "languageLabel": "Idioma"
+            },
+            "it": {
+                "languageName": "Italiano",
+                "title": "Hai un invito per Sprout",
+                "intro": "Un amico ti ha invitato su Sprout, l'app che trasforma il tempo davanti allo schermo in qualcosa da guadagnare. Iscriviti con il suo codice invito e riceverete premium gratis tutti e due per un po'.",
+                "codeHeading": "Il tuo codice invito",
+                "copyCode": "Copia codice",
+                "copied": "Codice copiato",
+                "noCode": "Chiedi al tuo amico il suo link d'invito",
+                "haveAppHeading": "Hai già Sprout?",
+                "openApp": "Apri l'invito nell'app",
+                "newHeading": "Non hai ancora Sprout?",
+                "newSteps": "Installa l'app e accedi. Su Android il codice arriva con l'installazione. Su iPhone lo copia il pulsante dell'App Store: quando Sprout ti chiede come l'hai conosciuto, scegli {friend} e incollalo.",
+                "friend": "Un amico",
+                "appStoreSmall": "Scarica su",
+                "appStoreLarge": "App Store",
+                "playSmall": "Disponibile su",
+                "playLarge": "Google Play",
+                "rewardsTerms": "I premi degli inviti sono soggetti ai {link}.",
+                "termsLink": "Termini di servizio",
+                "languageLabel": "Lingua"
+            },
+            "nl": {
+                "languageName": "Nederlands",
+                "title": "Je bent uitgenodigd voor Sprout",
+                "intro": "Een vriend heeft je uitgenodigd voor Sprout, de app waarmee je je schermtijd verdient. Meld je aan met de uitnodigingscode en jullie krijgen allebei een tijdje gratis premium.",
+                "codeHeading": "Je uitnodigingscode",
+                "copyCode": "Code kopiëren",
+                "copied": "Code gekopieerd",
+                "noCode": "Vraag je vriend om de uitnodigingslink",
+                "haveAppHeading": "Heb je Sprout al?",
+                "openApp": "Open de uitnodiging in de app",
+                "newHeading": "Nog geen Sprout?",
+                "newSteps": "Installeer de app en log in. Op Android komt de code mee met de installatie. Op iPhone kopieert de App Store-knop hem: als Sprout vraagt hoe je over de app hebt gehoord, kies je {friend} en plak je de code.",
+                "friend": "Vriend",
+                "appStoreSmall": "Download in de",
+                "appStoreLarge": "App Store",
+                "playSmall": "Ontdek het op",
+                "playLarge": "Google Play",
+                "rewardsTerms": "Voor uitnodigingsbeloningen gelden de {link}.",
+                "termsLink": "Servicevoorwaarden",
+                "languageLabel": "Taal"
+            },
+            "pl": {
+                "languageName": "Polski",
+                "title": "Zaproszenie do Sprout",
+                "intro": "Znajomy zaprasza Cię do Sprout – aplikacji, w której czas przed ekranem trzeba sobie zdobyć. Dołącz z jego kodem polecającym, a oboje dostaniecie na jakiś czas darmowe premium.",
+                "codeHeading": "Twój kod zaproszenia",
+                "copyCode": "Kopiuj kod",
+                "copied": "Skopiowano kod",
+                "noCode": "Poproś znajomego o link z zaproszeniem",
+                "haveAppHeading": "Masz już Sprout?",
+                "openApp": "Otwórz zaproszenie w aplikacji",
+                "newHeading": "Nie masz jeszcze Sprout?",
+                "newSteps": "Zainstaluj aplikację i zaloguj się. Na Androidzie kod przychodzi razem z instalacją. Na iPhonie kopiuje go przycisk App Store: gdy Sprout zapyta, skąd o nim wiesz, wybierz {friend} i wklej kod.",
+                "friend": "Od znajomych",
+                "appStoreSmall": "Pobierz z",
+                "appStoreLarge": "App Store",
+                "playSmall": "Pobierz z",
+                "playLarge": "Google Play",
+                "rewardsTerms": "Do nagród za polecenia mają zastosowanie {link}.",
+                "termsLink": "Warunki korzystania z usługi",
+                "languageLabel": "Język"
+            },
+            "tr": {
+                "languageName": "Türkçe",
+                "title": "Sprout'a davet edildin",
+                "intro": "Bir arkadaşın seni Sprout'a davet etti: ekran süresini kazanılan bir şeye dönüştüren uygulama. Onun davet koduyla katıl, ikiniz de bir süre ücretsiz Premium kullanın.",
+                "codeHeading": "Davet kodun",
+                "copyCode": "Kodu kopyala",
+                "copied": "Kod kopyalandı",
+                "noCode": "Arkadaşından davet bağlantısını iste",
+                "haveAppHeading": "Sprout zaten yüklü mü?",
+                "openApp": "Daveti uygulamada aç",
+                "newHeading": "Sprout'ta yeni misin?",
+                "newSteps": "Uygulamayı yükle ve oturum aç. Android'de kod, yüklemeyle birlikte gelir. iPhone'da App Store düğmesi kodu kopyalar: Sprout “Sprout'u nereden duydun?” diye sorduğunda {friend} seçeneğini seç ve kodu yapıştır.",
+                "friend": "Arkadaş",
+                "appStoreSmall": "App Store'dan",
+                "appStoreLarge": "İndirin",
+                "playSmall": "Google Play'den",
+                "playLarge": "Alın",
+                "rewardsTerms": "Davet ödülleri için {link} geçerlidir.",
+                "termsLink": "Hizmet Şartları",
+                "languageLabel": "Dil"
+            },
+            "ja": {
+                "languageName": "日本語",
+                "title": "Sproutへの招待が届きました",
+                "intro": "友だちからSproutへの招待が届きました。Sproutは、スクリーンタイムを自分で稼ぐアプリです。友だちの招待コードで参加すると、2人ともしばらくPremiumを無料で使えます。",
+                "codeHeading": "あなたの招待コード",
+                "copyCode": "コードをコピー",
+                "copied": "コードをコピーしました",
+                "noCode": "友だちに招待リンクを送ってもらってください",
+                "haveAppHeading": "Sproutをすでにお使いの方",
+                "openApp": "アプリで招待を開く",
+                "newHeading": "Sproutを初めて使う方",
+                "newSteps": "アプリをインストールしてログインしてください。Androidでは、インストールするとコードが自動で引き継がれます。iPhoneでは、App Storeボタンを押すとコードがコピーされます。「Sproutをどこで知りましたか？」と聞かれたら「{friend}」を選び、コードを貼り付けてください。",
+                "friend": "友だち",
+                "appStoreSmall": "App Storeから",
+                "appStoreLarge": "ダウンロード",
+                "playSmall": "Google Play で",
+                "playLarge": "手に入れよう",
+                "rewardsTerms": "招待特典には{link}が適用されます。",
+                "termsLink": "利用規約",
+                "languageLabel": "言語"
+            }
+        }
+    </script>
 
     <script>
         (function () {
             var CODE_PATTERN = /^SPROUT-[A-F0-9]{8}$/;
+            var DEFAULT_LANGUAGE = 'en';
+            var LANGUAGE_STORAGE_KEY = 'sprout-invite-language';
+            var strings = JSON.parse(document.getElementById('invite-strings').textContent);
+
             var params = new URLSearchParams(window.location.search);
             var rawCode = (params.get('code') || '').trim().toUpperCase();
             var code = CODE_PATTERN.test(rawCode) ? rawCode : null;
 
             var codeElement = document.getElementById('invite-code');
             var copyButton = document.getElementById('copy-code');
+            var copyLabel = document.getElementById('copy-code-label');
             var openAppLink = document.getElementById('open-app');
+            var playStoreLink = document.getElementById('play-store-link');
+            var languagePicker = document.getElementById('invite-language');
+            var playStoreBaseHref = playStoreLink.href;
+            var isCodeCopied = false;
+
+            function readStoredLanguage() {
+                try {
+                    return localStorage.getItem(LANGUAGE_STORAGE_KEY);
+                } catch (error) {
+                    return null;
+                }
+            }
+
+            function storeLanguage(language) {
+                try {
+                    localStorage.setItem(LANGUAGE_STORAGE_KEY, language);
+                } catch (error) {}
+            }
+
+            // Same regions as resolveSupportedLocale in the app, so a friend
+            // sees the Spanish the app will show them after installing.
+            var LATIN_AMERICAN_SPANISH_REGIONS = [
+                '419', 'AR', 'BO', 'CL', 'CO', 'CR', 'CU', 'DO', 'EC', 'GT', 'HN',
+                'MX', 'NI', 'PA', 'PE', 'PR', 'PY', 'SV', 'US', 'UY', 'VE'
+            ];
+
+            function supportedLanguageFor(browserLanguage) {
+                var parts = browserLanguage.split('-');
+                var language = parts[0].toLowerCase();
+                if (language === 'es') {
+                    var region = parts[parts.length - 1].toUpperCase();
+                    return LATIN_AMERICAN_SPANISH_REGIONS.indexOf(region) >= 0 ? 'es-419' : 'es';
+                }
+                return strings[language] ? language : null;
+            }
+
+            function initialLanguage() {
+                var storedLanguage = readStoredLanguage();
+                if (storedLanguage && strings[storedLanguage]) return storedLanguage;
+                var browserLanguages = navigator.languages && navigator.languages.length
+                    ? navigator.languages
+                    : [navigator.language || DEFAULT_LANGUAGE];
+                for (var index = 0; index < browserLanguages.length; index++) {
+                    var supportedLanguage = supportedLanguageFor(browserLanguages[index]);
+                    if (supportedLanguage) return supportedLanguage;
+                }
+                return DEFAULT_LANGUAGE;
+            }
+
+            function fillTemplate(element, template, placeholder, insertedNode) {
+                var pieces = template.split(placeholder);
+                element.textContent = '';
+                element.appendChild(document.createTextNode(pieces[0]));
+                element.appendChild(insertedNode);
+                element.appendChild(document.createTextNode(pieces[1]));
+            }
+
+            function applyLanguage(language) {
+                var text = strings[language];
+                document.documentElement.lang = language;
+                document.title = text.title;
+                document.querySelectorAll('[data-i18n]').forEach(function (element) {
+                    element.textContent = text[element.getAttribute('data-i18n')];
+                });
+
+                var friendOption = document.createElement('em');
+                friendOption.textContent = text.friend;
+                fillTemplate(document.getElementById('new-steps'), text.newSteps, '{friend}', friendOption);
+
+                var termsLink = document.getElementById('terms-link');
+                termsLink.textContent = text.termsLink;
+                fillTemplate(document.getElementById('rewards-terms'), text.rewardsTerms, '{link}', termsLink);
+
+                copyLabel.textContent = isCodeCopied ? text.copied : text.copyCode;
+                if (!code) codeElement.textContent = text.noCode;
+
+                playStoreLink.href = playStoreBaseHref + '&hl=' + encodeURIComponent(language);
+                if (code) {
+                    // Play returns the referrer to the app on first launch
+                    // (ReferralLinks.tryParseInstallReferrer); the App Store has
+                    // no equivalent, so iPhone users paste the copied code.
+                    playStoreLink.href += '&referrer=' + encodeURIComponent('code=' + code);
+                }
+            }
+
+            Object.keys(strings).forEach(function (language) {
+                var option = document.createElement('option');
+                option.value = language;
+                option.lang = language;
+                option.textContent = strings[language].languageName;
+                languagePicker.appendChild(option);
+            });
 
             if (code) {
                 codeElement.textContent = code;
                 openAppLink.href = 'sprout://invite?code=' + encodeURIComponent(code);
-                // Play returns the referrer to the app on first launch
-                // (ReferralLinks.tryParseInstallReferrer); the App Store has
-                // no equivalent, so iPhone users paste the copied code.
-                var playStoreLink = document.getElementById('play-store-link');
-                playStoreLink.href += '&referrer=' + encodeURIComponent('code=' + code);
                 document.getElementById('app-store-link').addEventListener('click', function () {
                     if (navigator.clipboard) navigator.clipboard.writeText(code);
                 });
             } else {
-                codeElement.textContent = 'Ask your friend for their invite link';
                 copyButton.style.display = 'none';
             }
 
             copyButton.addEventListener('click', function () {
                 if (!code || !navigator.clipboard) return;
                 navigator.clipboard.writeText(code).then(function () {
-                    copyButton.querySelector('strong').textContent = 'Copied!';
+                    isCodeCopied = true;
+                    copyLabel.textContent = strings[languagePicker.value].copied;
                 });
             });
+
+            languagePicker.addEventListener('change', function () {
+                storeLanguage(languagePicker.value);
+                applyLanguage(languagePicker.value);
+            });
+
+            languagePicker.value = initialLanguage();
+            applyLanguage(languagePicker.value);
         })();
     </script>
 
