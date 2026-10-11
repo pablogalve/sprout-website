@@ -120,7 +120,8 @@
                 "playLarge": "Google Play",
                 "rewardsTerms": "Referral rewards are subject to the {link}.",
                 "termsLink": "Terms of Service",
-                "languageLabel": "Language"
+                "languageLabel": "Language",
+                "titleNamed": "{name} invited you to Sprout"
             },
             "es": {
                 "languageName": "Español (España)",
@@ -141,7 +142,8 @@
                 "playLarge": "Google Play",
                 "rewardsTerms": "Las recompensas por invitación están sujetas a las {link}.",
                 "termsLink": "Condiciones del servicio",
-                "languageLabel": "Idioma"
+                "languageLabel": "Idioma",
+                "titleNamed": "{name} te invita a Sprout"
             },
             "es-419": {
                 "languageName": "Español (Latinoamérica)",
@@ -162,7 +164,8 @@
                 "playLarge": "Google Play",
                 "rewardsTerms": "Las recompensas por invitación están sujetas a los {link}.",
                 "termsLink": "Términos del servicio",
-                "languageLabel": "Idioma"
+                "languageLabel": "Idioma",
+                "titleNamed": "{name} te invita a Sprout"
             },
             "de": {
                 "languageName": "Deutsch",
@@ -183,7 +186,8 @@
                 "playLarge": "Google Play",
                 "rewardsTerms": "Für Empfehlungsprämien gelten die {link}.",
                 "termsLink": "Nutzungsbedingungen",
-                "languageLabel": "Sprache"
+                "languageLabel": "Sprache",
+                "titleNamed": "{name} lädt dich zu Sprout ein"
             },
             "ca": {
                 "languageName": "Català",
@@ -204,7 +208,8 @@
                 "playLarge": "Google Play",
                 "rewardsTerms": "Les recompenses per invitació estan subjectes a les {link}.",
                 "termsLink": "Condicions del servei",
-                "languageLabel": "Idioma"
+                "languageLabel": "Idioma",
+                "titleNamed": "{name} et convida a Sprout"
             },
             "fr": {
                 "languageName": "Français",
@@ -225,7 +230,8 @@
                 "playLarge": "Google Play",
                 "rewardsTerms": "Les récompenses de parrainage sont soumises aux {link}.",
                 "termsLink": "Conditions d'utilisation",
-                "languageLabel": "Langue"
+                "languageLabel": "Langue",
+                "titleNamed": "{name} t'invite sur Sprout"
             },
             "pt": {
                 "languageName": "Português (Brasil)",
@@ -246,7 +252,8 @@
                 "playLarge": "Google Play",
                 "rewardsTerms": "As recompensas de indicação estão sujeitas aos {link}.",
                 "termsLink": "Termos de Serviço",
-                "languageLabel": "Idioma"
+                "languageLabel": "Idioma",
+                "titleNamed": "{name} convidou você para o Sprout"
             },
             "it": {
                 "languageName": "Italiano",
@@ -267,7 +274,8 @@
                 "playLarge": "Google Play",
                 "rewardsTerms": "I premi degli inviti sono soggetti ai {link}.",
                 "termsLink": "Termini di servizio",
-                "languageLabel": "Lingua"
+                "languageLabel": "Lingua",
+                "titleNamed": "{name} ti invita su Sprout"
             },
             "nl": {
                 "languageName": "Nederlands",
@@ -288,7 +296,8 @@
                 "playLarge": "Google Play",
                 "rewardsTerms": "Voor uitnodigingsbeloningen gelden de {link}.",
                 "termsLink": "Servicevoorwaarden",
-                "languageLabel": "Taal"
+                "languageLabel": "Taal",
+                "titleNamed": "{name} nodigt je uit voor Sprout"
             },
             "pl": {
                 "languageName": "Polski",
@@ -309,7 +318,8 @@
                 "playLarge": "Google Play",
                 "rewardsTerms": "Do nagród za polecenia mają zastosowanie {link}.",
                 "termsLink": "Warunki korzystania z usługi",
-                "languageLabel": "Język"
+                "languageLabel": "Język",
+                "titleNamed": "{name} zaprasza Cię do Sprout"
             },
             "tr": {
                 "languageName": "Türkçe",
@@ -330,7 +340,8 @@
                 "playLarge": "Alın",
                 "rewardsTerms": "Davet ödülleri için {link} geçerlidir.",
                 "termsLink": "Hizmet Şartları",
-                "languageLabel": "Dil"
+                "languageLabel": "Dil",
+                "titleNamed": "{name} seni Sprout'a davet ediyor"
             },
             "ja": {
                 "languageName": "日本語",
@@ -351,7 +362,8 @@
                 "playLarge": "手に入れよう",
                 "rewardsTerms": "招待特典には{link}が適用されます。",
                 "termsLink": "利用規約",
-                "languageLabel": "言語"
+                "languageLabel": "言語",
+                "titleNamed": "{name}さんからSproutへの招待です"
             },
             "ko": {
                 "languageName": "한국어",
@@ -372,7 +384,8 @@
                 "playLarge": "Google Play",
                 "rewardsTerms": "초대 보상에는 {link}이 적용돼요.",
                 "termsLink": "서비스 이용약관",
-                "languageLabel": "언어"
+                "languageLabel": "언어",
+                "titleNamed": "{name}님이 Sprout에 초대했어요"
             },
             "vi": {
                 "languageName": "Tiếng Việt",
@@ -393,7 +406,8 @@
                 "playLarge": "Google Play",
                 "rewardsTerms": "Phần thưởng giới thiệu tuân theo {link}.",
                 "termsLink": "Điều khoản dịch vụ",
-                "languageLabel": "Ngôn ngữ"
+                "languageLabel": "Ngôn ngữ",
+                "titleNamed": "{name} mời bạn dùng Sprout"
             }
         }
     </script>
@@ -401,6 +415,7 @@
     <script>
         (function () {
             var CODE_PATTERN = /^SPROUT-[A-F0-9]{8}$/;
+            var INVITER_NAME_URL = 'https://europe-west1-unrot-c7bf9.cloudfunctions.net/invite_inviter_name';
             var DEFAULT_LANGUAGE = 'en';
             var LANGUAGE_STORAGE_KEY = 'sprout-invite-language';
             var strings = JSON.parse(document.getElementById('invite-strings').textContent);
@@ -417,6 +432,7 @@
             var languagePicker = document.getElementById('invite-language');
             var playStoreBaseHref = playStoreLink.href;
             var isCodeCopied = false;
+            var inviterName = null;
 
             function readStoredLanguage() {
                 try {
@@ -477,6 +493,11 @@
                 document.querySelectorAll('[data-i18n]').forEach(function (element) {
                     element.textContent = text[element.getAttribute('data-i18n')];
                 });
+                if (inviterName) {
+                    var namedTitle = text.titleNamed.replace('{name}', inviterName);
+                    document.title = namedTitle;
+                    document.querySelector('[data-i18n="title"]').textContent = namedTitle;
+                }
 
                 var friendOption = document.createElement('em');
                 friendOption.textContent = text.friend;
@@ -531,6 +552,18 @@
 
             languagePicker.value = initialLanguage();
             applyLanguage(languagePicker.value);
+            // The generic title shows first; the name replaces it only if the
+            // backend knows one, so a slow or failed lookup costs nothing.
+            if (code) {
+                fetch(INVITER_NAME_URL + '?code=' + encodeURIComponent(code))
+                    .then(function (response) { return response.ok ? response.json() : null; })
+                    .then(function (body) {
+                        if (!body || typeof body.firstName !== 'string' || !body.firstName) return;
+                        inviterName = body.firstName;
+                        applyLanguage(languagePicker.value);
+                    })
+                    .catch(function () {});
+            }
         })();
     </script>
 
