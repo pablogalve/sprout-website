@@ -9,6 +9,11 @@
     const analyticsLinkSelector = "[data-analytics-event]";
     const dataAttributePrefix = "analytics";
     const eventAttributeName = "analyticsEvent";
+    const socialSourceQueryParameter = "utm_source";
+    const socialSources = ["tiktok", "instagram", "youtube"];
+    const socialCampaignMedium = "social";
+    const storeLinkSelector = "[data-analytics-store]";
+    const playStoreHost = "play.google.com";
 
     function hasValidMeasurementId() {
         return measurementIdPattern.test(measurementId);
@@ -170,7 +175,28 @@
         });
     }
 
+    function socialSourceFromLocation() {
+        const source = new URLSearchParams(window.location.search).get(socialSourceQueryParameter);
+        return socialSources.includes(source) ? source : null;
+    }
+
+    // Play hands the referrer to Firebase on first open, which is the only way an
+    // install from a bio link reaches GA4 with its source: the app's own "how did
+    // you hear about us" answer names where people scroll, not where they found us.
+    function tagStoreLinksWithSocialSource() {
+        const source = socialSourceFromLocation();
+        if (!source) return;
+        document.querySelectorAll(storeLinkSelector).forEach((link) => {
+            link.dataset.analyticsSocialSource = source;
+            const url = new URL(link.href);
+            if (url.host !== playStoreHost) return;
+            url.searchParams.set("referrer", `utm_source=${source}&utm_medium=${socialCampaignMedium}`);
+            link.href = url.toString();
+        });
+    }
+
     function initializeAnalytics() {
+        tagStoreLinksWithSocialSource();
         attachLinkTracking();
         if (!hasValidMeasurementId() || hasDoNotTrackEnabled()) return;
         loadAnalytics();
