@@ -423,6 +423,11 @@
             var params = new URLSearchParams(window.location.search);
             var rawCode = (params.get('code') || '').trim().toUpperCase();
             var code = CODE_PATTERN.test(rawCode) ? rawCode : null;
+            var hasReferralCode = String(code !== null);
+            document.body.dataset.analyticsHasReferralCode = hasReferralCode;
+            document.querySelectorAll('[data-analytics-store]').forEach(function (storeLink) {
+                storeLink.dataset.analyticsHasReferralCode = hasReferralCode;
+            });
 
             var codeElement = document.getElementById('invite-code');
             var copyButton = document.getElementById('copy-code');

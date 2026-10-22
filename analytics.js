@@ -14,6 +14,7 @@
     const socialCampaignMedium = "social";
     const storeLinkSelector = "[data-analytics-store]";
     const playStoreHost = "play.google.com";
+    const invitePageName = "invite";
 
     function hasValidMeasurementId() {
         return measurementIdPattern.test(measurementId);
@@ -95,6 +96,12 @@
         });
     }
 
+    function trackInvitePageView() {
+        trackEvent("invite_page_view", {
+            has_referral_code: document.body.dataset.analyticsHasReferralCode,
+        });
+    }
+
     function trackPageView() {
         const pageName = analyticsPageName();
         if (!pageName) return;
@@ -104,6 +111,7 @@
             page_title: document.title,
             website_page: pageName,
         });
+        if (pageName === invitePageName) trackInvitePageView();
     }
 
     function loadAnalytics() {
