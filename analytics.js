@@ -9,9 +9,19 @@
     const analyticsLinkSelector = "[data-analytics-event]";
     const dataAttributePrefix = "analytics";
     const eventAttributeName = "analyticsEvent";
-    const socialSourceQueryParameter = "utm_source";
+    const sourceQueryParameter = "utm_source";
     const socialSources = ["tiktok", "instagram", "youtube"];
-    const socialCampaignMedium = "social";
+    const aiAssistantHosts = ["chatgpt.com", "chat.openai.com", "perplexity.ai", "claude.ai", "gemini.google.com", "copilot.microsoft.com"];
+    const searchEngineHostPattern = /(^|\.)(google|bing|duckduckgo|ecosia|yahoo|brave|yandex|qwant|startpage)\.[a-z.]+$/;
+    const TrafficMedium = Object.freeze({
+        ai: "ai",
+        organic: "organic",
+        referral: "referral",
+        social: "social",
+        website: "website",
+    });
+    const websiteTrafficSource = "the-sprout.app";
+    const trafficSourceSessionStorageKey = "sproutWebsiteTrafficSource";
     const storeLinkSelector = "[data-analytics-store]";
     const playStoreHost = "play.google.com";
     const invitePageName = "invite";
@@ -48,6 +58,49 @@
         return document.body.dataset.analyticsPage || "unknown";
     }
 
+    function hostWithoutWww(host) {
+        return host.replace(/^www\./, "");
+    }
+
+    function mediumForSource(source) {
+        if (socialSources.includes(source)) return TrafficMedium.social;
+        if (aiAssistantHosts.includes(source)) return TrafficMedium.ai;
+        if (searchEngineHostPattern.test(source)) return TrafficMedium.organic;
+        return TrafficMedium.referral;
+    }
+
+    function externalReferrerHost() {
+        try {
+            const referrer = new URL(document.referrer);
+            if (referrer.origin === window.location.origin) return null;
+            return hostWithoutWww(referrer.host);
+        } catch (_) {
+            return null;
+        }
+    }
+
+    // ChatGPT tags the links it cites with utm_source=chatgpt.com, and that tag
+    // still arrives when the browser strips the referrer.
+    function arrivalTrafficSource() {
+        const source = new URLSearchParams(window.location.search).get(sourceQueryParameter) || externalReferrerHost();
+        if (source) return { source, medium: mediumForSource(source), landingPage: analyticsPageName() };
+        return { source: websiteTrafficSource, medium: TrafficMedium.website, landingPage: analyticsPageName() };
+    }
+
+    // The first page of a visit decides the source: by the time someone taps a
+    // store button on a second page, document.referrer is our own site.
+    function resolveTrafficSource() {
+        try {
+            const storedTrafficSource = window.sessionStorage.getItem(trafficSourceSessionStorageKey);
+            if (storedTrafficSource) return JSON.parse(storedTrafficSource);
+            const trafficSource = arrivalTrafficSource();
+            window.sessionStorage.setItem(trafficSourceSessionStorageKey, JSON.stringify(trafficSource));
+            return trafficSource;
+        } catch (_) {
+            return arrivalTrafficSource();
+        }
+    }
+
     function shouldTrackVisit() {
         try {
             if (window.sessionStorage.getItem(visitSessionStorageKey) === visitSessionStorageValue) return false;
@@ -64,7 +117,7 @@
             ad_personalization: "denied",
             ad_storage: "denied",
             ad_user_data: "denied",
-            analytics_storage: "denied",
+            analytics_storage: "granted",
         });
         window.gtag("set", "ads_data_redaction", true);
         window.gtag("js", new Date());
@@ -86,13 +139,15 @@
         });
     }
 
-    function trackVisit() {
+    function trackVisit(trafficSource) {
         if (!shouldTrackVisit()) return;
         trackEvent("website_visit", {
             landing_page: analyticsPageName(),
             page_location: sanitizedLocation(),
             page_path: window.location.pathname,
             page_title: document.title,
+            traffic_medium: trafficSource.medium,
+            traffic_source: trafficSource.source,
         });
     }
 
@@ -114,7 +169,7 @@
         if (pageName === invitePageName) trackInvitePageView();
     }
 
-    function loadAnalytics() {
+    function loadAnalytics(trafficSource) {
         if (window.sproutAnalyticsLoaded) return;
         configureAnalytics();
         const script = document.createElement("script");
@@ -122,7 +177,7 @@
         script.src = `${analyticsScriptBaseUrl}${encodeURIComponent(measurementId)}`;
         document.head.append(script);
         window.sproutAnalyticsLoaded = true;
-        trackVisit();
+        trackVisit(trafficSource);
         trackPageView();
     }
 
@@ -183,31 +238,34 @@
         });
     }
 
-    function socialSourceFromLocation() {
-        const source = new URLSearchParams(window.location.search).get(socialSourceQueryParameter);
-        return socialSources.includes(source) ? source : null;
+    // Play hands the referrer to Firebase on first open, which is the only way an
+    // install from the website reaches GA4 with its source. Tagging happens on tap
+    // because the invite page writes its referral code into the link after load.
+    function tagStoreLinkWithTrafficSource(link, trafficSource) {
+        link.dataset.analyticsTrafficSource = trafficSource.source;
+        link.dataset.analyticsTrafficMedium = trafficSource.medium;
+        const url = new URL(link.href);
+        if (url.host !== playStoreHost) return;
+        const playReferrer = new URLSearchParams(url.searchParams.get("referrer") || "");
+        playReferrer.set("utm_source", trafficSource.source);
+        playReferrer.set("utm_medium", trafficSource.medium);
+        playReferrer.set("utm_campaign", trafficSource.landingPage);
+        url.searchParams.set("referrer", playReferrer.toString());
+        link.href = url.toString();
     }
 
-    // Play hands the referrer to Firebase on first open, which is the only way an
-    // install from a bio link reaches GA4 with its source: the app's own "how did
-    // you hear about us" answer names where people scroll, not where they found us.
-    function tagStoreLinksWithSocialSource() {
-        const source = socialSourceFromLocation();
-        if (!source) return;
+    function attachStoreLinkTagging(trafficSource) {
         document.querySelectorAll(storeLinkSelector).forEach((link) => {
-            link.dataset.analyticsSocialSource = source;
-            const url = new URL(link.href);
-            if (url.host !== playStoreHost) return;
-            url.searchParams.set("referrer", `utm_source=${source}&utm_medium=${socialCampaignMedium}`);
-            link.href = url.toString();
+            link.addEventListener("click", () => tagStoreLinkWithTrafficSource(link, trafficSource));
         });
     }
 
     function initializeAnalytics() {
-        tagStoreLinksWithSocialSource();
+        const trafficSource = resolveTrafficSource();
+        attachStoreLinkTagging(trafficSource);
         attachLinkTracking();
         if (!hasValidMeasurementId() || hasDoNotTrackEnabled()) return;
-        loadAnalytics();
+        loadAnalytics(trafficSource);
     }
 
     if (document.readyState === "loading") {

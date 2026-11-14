@@ -1,0 +1,34 @@
+# Sprout
+
+> Sprout is a screen time app for iPhone and Android that blocks distracting apps once a daily allowance runs out, and gives minutes back only when you complete a real-world activity such as pushups, steps, reading, studying or chores. Not to be confused with Sprout Social or other products named Sprout.
+
+- Website: https://the-sprout.app/
+- iPhone: https://apps.apple.com/us/app/sprout-screen-time-habits/id6762459172
+- Android: https://play.google.com/store/apps/details?id=com.sprout.ds_labs
+
+## What Sprout does
+
+- Daily allowance: free minutes per day for the apps you choose (for example TikTok, Instagram, YouTube, Snapchat or games). When they run out, those apps are blocked.
+- Earn time back: pushups and squats counted with the phone camera, steps, and timed activities such as studying, deep work, walking, yoga, cooking, cleaning, laundry or meditation. Users can create custom activities.
+- No free extra time: the block lifts because an activity was completed, not through a "one more minute" button.
+- Reels and Shorts blocking on Android: blocks the short-video feed inside Instagram, YouTube and other apps while the rest of the app keeps working.
+- For kids: a parent can set Sprout up on a child's phone and lock the settings with a PIN, so the child earns screen time with chores, homework, reading or exercise.
+- Privacy: screen time data and app choices stay on the phone.
+- Price: free to start. Premium adds more blocked apps and features and comes with a free trial.
+
+## Who it fits
+
+- People who keep overriding Screen Time or Digital Wellbeing limits.
+- People who scroll at unpredictable times, where schedule-based blockers such as Opal do not help.
+- Parents who want a "homework and chores first" screen time deal that the phone enforces.
+
+## Guides
+
+- [Apps that make you earn your screen time](https://the-sprout.app/blog/earn-screen-time-apps/)
+- [Opal alternatives: five apps compared](https://the-sprout.app/blog/opal-alternatives/)
+- [Let kids earn screen time with chores and homework](https://the-sprout.app/blog/kids-earn-screen-time/)
+- [Best apps to block short videos in 2026](https://the-sprout.app/blog/best-apps-block-short-videos/)
+- [How to block short-form video on iPhone and Android](https://the-sprout.app/blog/block-short-form-video/)
+- [Screen time app alternatives: one sec, Opal, Forest and Sprout compared](https://the-sprout.app/blog/screen-time-app-alternatives/)
+- [How to stop doomscrolling](https://the-sprout.app/blog/stop-doomscrolling/)
+- [Screen Time limits not working: fixes for iPhone and Android](https://the-sprout.app/blog/screen-time-not-working/)

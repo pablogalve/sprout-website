@@ -36,7 +36,7 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/"/>
-        <lastmod>2026-08-04</lastmod>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -46,7 +46,7 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/"/>
-        <lastmod>2026-08-04</lastmod>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -56,7 +56,7 @@
         <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/"/>
-        <lastmod>2026-08-04</lastmod>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -207,6 +207,96 @@
         <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/beste-apps-kurzvideos-blockieren/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/best-apps-block-short-videos/"/>
         <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/blog/earn-screen-time-apps/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/earn-screen-time-apps/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/apps-ganar-tiempo-de-pantalla/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/bildschirmzeit-verdienen-apps/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/earn-screen-time-apps/"/>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/es/blog/apps-ganar-tiempo-de-pantalla/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/earn-screen-time-apps/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/apps-ganar-tiempo-de-pantalla/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/bildschirmzeit-verdienen-apps/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/earn-screen-time-apps/"/>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/de/blog/bildschirmzeit-verdienen-apps/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/earn-screen-time-apps/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/apps-ganar-tiempo-de-pantalla/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/bildschirmzeit-verdienen-apps/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/earn-screen-time-apps/"/>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/blog/opal-alternatives/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/opal-alternatives/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/alternativas-a-opal/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/opal-alternativen/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/opal-alternatives/"/>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/es/blog/alternativas-a-opal/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/opal-alternatives/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/alternativas-a-opal/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/opal-alternativen/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/opal-alternatives/"/>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/de/blog/opal-alternativen/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/opal-alternatives/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/alternativas-a-opal/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/opal-alternativen/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/opal-alternatives/"/>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/blog/kids-earn-screen-time/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/kids-earn-screen-time/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/ninos-ganar-tiempo-de-pantalla/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/kinder-bildschirmzeit-verdienen/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/kids-earn-screen-time/"/>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/es/blog/ninos-ganar-tiempo-de-pantalla/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/kids-earn-screen-time/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/ninos-ganar-tiempo-de-pantalla/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/kinder-bildschirmzeit-verdienen/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/kids-earn-screen-time/"/>
+        <lastmod>2026-11-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://the-sprout.app/de/blog/kinder-bildschirmzeit-verdienen/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://the-sprout.app/blog/kids-earn-screen-time/"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://the-sprout.app/es/blog/ninos-ganar-tiempo-de-pantalla/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://the-sprout.app/de/blog/kinder-bildschirmzeit-verdienen/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://the-sprout.app/blog/kids-earn-screen-time/"/>
+        <lastmod>2026-11-14</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
