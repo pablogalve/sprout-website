@@ -499,7 +499,7 @@
                     element.textContent = text[element.getAttribute('data-i18n')];
                 });
                 if (inviterName) {
-                    var namedTitle = text.titleNamed.replace('{name}', inviterName);
+                    var namedTitle = text.titleNamed.split('{name}').join(inviterName);
                     document.title = namedTitle;
                     document.querySelector('[data-i18n="title"]').textContent = namedTitle;
                 }
